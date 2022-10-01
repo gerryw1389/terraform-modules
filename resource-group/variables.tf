@@ -10,5 +10,13 @@ variable "location" {
 }
 
 variable "tags" {
-  description = "(Required) Tags of the RG to be created"
+  description = "(Optional) Tags associated with an Azure Resource. Default: { Owner = Automation Admin }"
+  type        = map(string)
+  default = {
+    Owner      = "Automation Admin"
+    CostCenter = "100"
+    EntAppname = "Automation Admin Terraform POC"
+    Appenv     = var.env_stage
+    Apppoc     = "gerry@automationadmin.com"
+  }
 }
