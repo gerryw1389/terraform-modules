@@ -31,4 +31,9 @@ resource "azurerm_subnet" "subnet" {
       }
     }
   }
+  lifecycle {
+    ignore_changes = [
+       address_prefixes
+    ]
+  }
 }
